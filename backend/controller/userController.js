@@ -12,7 +12,8 @@ const addUser = async (req, res) => {
 };
 
 const getAllUsers = (req, res) => {
-  const users = userService.getAllUsers();
+  const params = req.query;
+  const users = userService.getAllUsers(params);
   res.json(users);
 };
 
