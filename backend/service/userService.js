@@ -41,8 +41,9 @@ const deleteUser = (username) => {
 const toggleStar = (username) => {
   const index = favoriteUsers.findIndex((user) => user.username === username);
   if (index !== -1) {
+    const isUserStarred = favoriteUsers[index].starred;
     favoriteUsers.forEach((user) => (user.starred = false)); // Retira a estrela de todos os usuários
-    favoriteUsers[index].starred = true;
+    favoriteUsers[index].starred = isUserStarred?false:true;
     return favoriteUsers[index];
   }
   return { error: `Usuário com username ${username} não encontrado.`}
