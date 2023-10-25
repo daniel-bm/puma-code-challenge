@@ -1,4 +1,3 @@
-// controller/userController.js
 const userService = require('../service/userService');
 
 const addUser = async (req, res) => {
