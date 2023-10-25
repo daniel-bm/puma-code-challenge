@@ -2,8 +2,8 @@
 const userService = require('../service/userService');
 
 const addUser = async (req, res) => {
-  const { username, nome, avatar, url } = req.body;
-  const result = await userService.addUser({ username, nome, avatar, url });
+  const { username } = req.body;
+  const result = await userService.addUser(username);
   if (result.error) {
     res.status(400).json({ error: result.error });
   } else {

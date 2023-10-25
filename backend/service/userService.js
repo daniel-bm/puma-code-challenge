@@ -3,26 +3,26 @@ const UserModel = require("../model/user.js");
 
 const favoriteUsers = [];
 
-const addUser = async (userData) => {
+const addUser = async (username) => {
   if (favoriteUsers.length >= 5) {
     return { error: 'Limite de 5 usuários favoritos atingido.' };
   }
 
-  if (favoriteUsers.some((user) => user.username === userData.username)) {
+  if (favoriteUsers.some((user) => user.username.toLowerCase() === username.toLowerCase())) {
     return { error: 'Este usuário já está na lista de favoritos.' };
   }
 
   try {
-    const response = await axios.get(`https://api.github.com/users/${userData.username}`);
+    const response = await axios.get(`https://api.github.com/users/${username}`);
+    const gitUser = response.data
+    const user = new UserModel(gitUser.login, gitUser.name, gitUser.avatar_url, gitUser.html_url)
+    favoriteUsers.push(user);
+    return user;
   } catch (error) {
     if (error.code === 'ERR_BAD_REQUEST')
-      return { error: `Usuário com username ${userData.username} não encontrado no github.`};
+      return { error: 'Usuário não encontrado.'};
     return { error: 'Ocorreu um erro ao acessar o github. Tente novamente mais tarde.'}
   }
-
-  const user = new UserModel(userData.username, userData.nome, userData.avatar, userData.url)
-  favoriteUsers.push(user);
-  return user;
 };
 
 const getAllUsers = () => {
