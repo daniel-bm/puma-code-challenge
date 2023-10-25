@@ -58,4 +58,5 @@ module.exports = {
   getAllUsers,
   deleteUser,
   toggleStar,
+  favoriteUsers,
 };
