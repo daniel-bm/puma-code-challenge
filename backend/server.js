@@ -1,6 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
+
 const app = express();
+app.use(cors());
+
 const port = 3000;
 const userRouter = require('./router/userRouter');
 
