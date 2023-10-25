@@ -28,7 +28,7 @@ const addUser = async (username) => {
 const getAllUsers = (params) => {
   const sortMethod = params.sort;
   if (sortMethod === 'nome') {
-    favoriteUsers.sort((a, b) => a.nome.localeCompare(b.nome));
+    favoriteUsers.sort((a, b) => a.nome?.localeCompare(b.nome));
   }
   return favoriteUsers;
 };
