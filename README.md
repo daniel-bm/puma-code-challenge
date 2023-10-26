@@ -14,7 +14,6 @@ Para um melhor fluxo de desenvolvimento do frontend foi criado um protótipo no 
 
 ```
 git clone https://github.com/daniel-bm/puma-code-challenge
-
 ```
 
 ### Backend
@@ -23,21 +22,18 @@ git clone https://github.com/daniel-bm/puma-code-challenge
 
 ```
 cd puma-code-challenge/backend
-
 ```
 
 3. Instale os pacotes
 
 ```
 npm install
-
 ```
 
 4. Rode o servidor
 
 ```
 npm start
-
 ```
 
 ### Frontend
@@ -46,21 +42,18 @@ npm start
 
 ```
 cd puma-code-challenge/frontend
-
 ```
 
 6. Instale os pacotes
 
 ```
 npm install
-
 ```
 
 7. Rode o frontend
 
 ```
 npm run serve
-
 ```
 
 ### Testes
@@ -69,13 +62,11 @@ npm run serve
 
 ```
 cd puma-code-challenge/backend
-
 ```
 
 9. Rode os testes
 
 ```
 npm test
-
 ```
 
