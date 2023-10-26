@@ -3,6 +3,7 @@
 ## Aplicação
 
 A aplicação consiste em um backend e um frontend para uma listagem de usuários favoritos do Github.
+
 O backend foi desenvolvido utlizando node e express, já o frontend foi desenvolvido em vue. Também foi utilizado o jest para realizar os testes unitários do backend.
 
 Para um melhor fluxo de desenvolvimento do frontend foi criado um protótipo no figma. O protótipo pode ser acessado [aqui](https://www.figma.com/file/gXiIR01LwBApFlUfEOEQwV/Untitled?type=design&node-id=0%3A1&mode=dev).
@@ -71,7 +72,7 @@ cd puma-code-challenge/backend
 
 ```
 
-8. Rode os testes
+9. Rode os testes
 
 ```
 npm test
